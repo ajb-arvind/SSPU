@@ -18,13 +18,23 @@
         android:textStyle="bold"
         android:padding="7dp"
         android:textColor="@color/blue"
-        android:elevation="4dp"/>
+        android:elevation="4dp"
+        android:textSize="20dp"/>
+    
+    <android.support.v7.widget.CardView
+        android:id="@+id/your_year_card"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:elevation="1dp"
+        app:cardCornerRadius="20dp">
+        <Spinner
+            android:id="@+id/spinner_year"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            />
 
-    <Spinner
-        android:id="@+id/spinner_year"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"/>
+    </android.support.v7.widget.CardView>
 
     <TextView
         android:id="@+id/textView4"
@@ -35,11 +45,22 @@
         android:textStyle="bold"
         android:padding="7dp"
         android:textColor="@color/blue"
-        android:elevation="4dp"/>
+        android:elevation="4dp"
+        android:textSize="20dp"/>
 
-    <Spinner
-        android:id="@+id/spinner_branch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/your_branch_card"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:elevation="1dp"
+        app:cardCornerRadius="20dp">
+        <Spinner
+            android:id="@+id/spinner_branch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            />
+
+    </android.support.v7.widget.CardView>
+
 </LinearLayout>
