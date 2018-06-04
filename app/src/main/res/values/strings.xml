@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">SPPU Question Paper</string>
+    <string-array name="choiceYear">
+        <item>FE</item>
+        <item>SE</item>
+        <item>TE</item>
+        <item>BE</item>
+    </string-array>
+    <string-array name="choiceBranch">
+        <item>Computer</item>
+        <item>Mechanical</item>
+        <item>Civil</item>
+        <item>En-TC</item>
+    </string-array>
 </resources>

@@ -21,7 +21,7 @@
         android:elevation="4dp"/>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_year"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"/>
@@ -38,7 +38,7 @@
         android:elevation="4dp"/>
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spinner_branch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp" />
