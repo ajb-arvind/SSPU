@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 public class categorySetting extends AppCompatActivity {
 
+
     Spinner spinnerYear = (Spinner) findViewById(R.id.spinner_year);
     Spinner spinnerBranch = (Spinner) findViewById(R.id.spinner_branch);
-    Button buttonEnter = (Button)findViewById(R.id.enter_button);
+    Button buttonEnter = (Button) findViewById(R.id.enter_button);
     String stringYear, stringBranch;
 
     @Override
@@ -59,7 +60,7 @@ public class categorySetting extends AppCompatActivity {
 
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id){
-    /*
+
         switch (parent.getId()){
             case R.id.spinner_year:
                         stringYear = parent.getSelectedItem().toString();
@@ -70,11 +71,10 @@ public class categorySetting extends AppCompatActivity {
                 break;
         }
         // An item was selected. You can retrieve the selected item using
-        // parent.getItemAtPosition(pos)*/
+        // parent.getItemAtPosition(pos)
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
         // Another interface callback
     }
-
 }
