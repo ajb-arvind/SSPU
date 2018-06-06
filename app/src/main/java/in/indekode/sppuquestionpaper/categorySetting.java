@@ -1,6 +1,7 @@
 package in.indekode.sppuquestionpaper;
 
 import android.content.Intent;
+import android.gesture.Prediction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +11,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class categorySetting extends AppCompatActivity {
+import in.indekode.sppuquestionpaper.Sharedpreference.PrefManager;
 
+public class categorySetting extends AppCompatActivity {
 
     Spinner spinnerYear = (Spinner) findViewById(R.id.spinner_year);
     Spinner spinnerBranch = (Spinner) findViewById(R.id.spinner_branch);
-    Button buttonEnter = (Button) findViewById(R.id.enter_button);
+    Button buttonEnter = (Button)findViewById(R.id.enter_button);
     String stringYear, stringBranch;
 
     @Override
@@ -46,9 +48,7 @@ public class categorySetting extends AppCompatActivity {
         buttonEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                attempLogin();
-                Intent intent = new Intent(getApplicationContext(), in.indekode.sppuquestionpaper.MainActivity.class);
-                startActivity(intent);
+
             }
         });
     }
@@ -56,11 +56,22 @@ public class categorySetting extends AppCompatActivity {
     private void attempLogin(){
         stringYear = spinnerYear.getSelectedItem().toString();
         stringYear = spinnerBranch.getSelectedItem().toString();
+
+    }
+
+    private void startHomeActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void saveEnterDetails(String year, String branch){
+        new PrefManager(this).saveEnterDetails(year, branch);
     }
 
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id){
-
+    /*
         switch (parent.getId()){
             case R.id.spinner_year:
                         stringYear = parent.getSelectedItem().toString();
@@ -71,10 +82,12 @@ public class categorySetting extends AppCompatActivity {
                 break;
         }
         // An item was selected. You can retrieve the selected item using
-        // parent.getItemAtPosition(pos)
+        // parent.getItemAtPosition(pos)*/
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
         // Another interface callback
+
     }
+
 }
