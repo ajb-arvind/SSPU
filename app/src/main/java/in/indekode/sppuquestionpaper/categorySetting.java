@@ -23,6 +23,10 @@ public class categorySetting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (new PrefManager(this).getYear() != "" && new PrefManager(this).getBranch() != ""){
+            startHomeActivity();
+
+        }
         setContentView(R.layout.activity_category_setting);
 
         //Year
@@ -48,14 +52,21 @@ public class categorySetting extends AppCompatActivity {
         buttonEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(onNothingSelected(spinnerYear) && onNothingSelected(spinnerYear)){
+                    Toast.makeText(getApplicationContext(), "You should choose above", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    attempLogin();
+                    startHomeActivity();
+                    saveEnterDetails(stringYear,stringBranch);
+                }
             }
         });
     }
 
     private void attempLogin(){
         stringYear = spinnerYear.getSelectedItem().toString();
-        stringYear = spinnerBranch.getSelectedItem().toString();
+        stringBranch = spinnerBranch.getSelectedItem().toString();
 
     }
 
@@ -85,9 +96,10 @@ public class categorySetting extends AppCompatActivity {
         // parent.getItemAtPosition(pos)*/
     }
 
-    public void onNothingSelected(AdapterView<?> parent) {
+    public boolean onNothingSelected(AdapterView<?> parent) {
         // Another interface callback
 
+        return  false;
     }
 
 }
