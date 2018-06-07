@@ -23,12 +23,11 @@ public class categorySetting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (new PrefManager(this).getYear() != "" && new PrefManager(this).getBranch() != ""){
-            startHomeActivity();
-
-        }
         setContentView(R.layout.activity_category_setting);
 
+        if (new PrefManager(this).isUserLogedOut()){
+            startHomeActivity();
+        }
         //Year
         ArrayAdapter<CharSequence> staticAdapterYear = ArrayAdapter
                 .createFromResource(this, R.array.choiceYear,
